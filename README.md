@@ -19,4 +19,16 @@
 11. }
 12. void loop(){}
 ### CDS sensor
+![image](https://user-images.githubusercontent.com/102523600/173245957-6afc8252-5686-4245-bd7a-f77bedfa5d17.png)
 ### CODE
+1. int cds = A2; // Analog input pin that the potentiometer is attached to
+2. int cdsValue = 0; // value read from the pot
+3. void setup() {
+4. Serial.begin(9600);
+5. }
+6. void loop() {
+7. cdsValue  = analogRead(cds);  // read the analog in value:
+8. Serial.print("sensor = ");   // print the results to the serial monitor:
+9. Serial.println(cdsValue);  // for the analog-to-digital converter to settle // after the last reading:
+10. delay(20); // wait 2 milliseconds before the next loop
+11. }
